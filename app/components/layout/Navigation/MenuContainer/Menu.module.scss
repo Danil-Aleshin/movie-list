@@ -1,0 +1,45 @@
+.container {
+	@apply flex flex-col gap-3;
+}
+
+.menu {
+	@apply flex flex-col gap-6 py-6 border-b border-b-primary border-opacity-25;
+
+	> h1 {
+		@apply text-white text-lg hidden xl:block;
+	}
+
+	&:last-child {
+		@apply border-none;
+	}
+
+	> li {
+		> a {
+			@apply flex items-center gap-4 cursor-pointer xl:justify-start justify-center;
+
+			> svg {
+				@apply text-2lg transition-colors flex-shrink-0;
+			}
+			> span {
+				@apply transition-colors hidden xl:block;
+			}
+		}
+
+		&:hover {
+			> a > svg {
+				@apply fill-white;
+			}
+			> a > span {
+				@apply text-white;
+			}
+		}
+		&.active {
+			> a > svg {
+				@apply fill-primary;
+			}
+			> a > span {
+				@apply text-primary;
+			}
+		}
+	}
+}

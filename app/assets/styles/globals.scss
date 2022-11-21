@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'react-redux-toastr/src/styles/index';
+
+body {
+	font-family: 'Nunito', sans-serif;
+	@apply bg-darkBlue-1000;
+
+	&::-webkit-scrollbar {
+		@apply w-1;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply bg-black-900;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply rounded-3xl border-gray-700 bg-gray-700;
+	}
+}
+* {
+	@apply p-0 m-0 box-border text-gray-100 font-bold;
+}
+
+input {
+	@apply outline-border-none;
+}
+input:focus {
+	box-shadow: none !important;
+}
+
+.slide-animation-enter {
+	opacity: 0;
+	transform: scale(0.9);
+}
+.slide-animation-enter-active {
+	opacity: 1;
+	transform: translateX(0);
+	transition: opacity 300ms, transform 300ms;
+}
+.slide-animation-exit {
+	opacity: 1;
+}
+.slide-animation-exit-active {
+	opacity: 0;
+	transform: scale(0.9);
+	transition: opacity 300ms, transform 300ms;
+}

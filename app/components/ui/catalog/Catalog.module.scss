@@ -1,0 +1,6 @@
+.header {
+	@apply flex flex-col items-start gap-1.5 mb-10;
+}
+.notFound {
+	@apply flex justify-center text-primary text-3xl;
+}

@@ -1,0 +1,9 @@
+.favoriteButton {
+	@apply transition-transform;
+	&:hover {
+		@apply scale-105;
+	}
+	svg {
+		@apply fill-like animate-scaleIn text-4xl;
+	}
+}

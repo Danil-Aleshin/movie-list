@@ -1,0 +1,38 @@
+$sidebar-width: 260px;
+$mobile-sidebar-width: 56px;
+
+.layout {
+	@apply relative;
+	display: grid;
+	grid-template-areas:
+		'navigation header'
+		'navigation main';
+	grid-template-columns: $sidebar-width 1fr;
+	grid-template-rows: 64px 1fr;
+
+	@media (max-width: 1279px) {
+		grid-template-columns: $mobile-sidebar-width 1fr;
+	}
+
+	aside {
+		@apply overflow-y-auto bg-darkBlue-900 w-14 fixed top-0 left-0 h-full p-3 xl:p-layout xl:w-65 overflow-x-hidden;
+		max-width: $sidebar-width;
+		grid-area: navigation;
+	}
+
+	.main {
+		@apply min-h-screen w-full p-3 md:p-layout relative overflow-x-hidden;
+		grid-area: main;
+	}
+	header {
+		@apply h-14 bg-darkBlue-900 z-4 w-full fixed top-0;
+		left: $sidebar-width;
+		grid-area: header;
+		@media (max-width: 1279px) {
+			left: $mobile-sidebar-width;
+		}
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}

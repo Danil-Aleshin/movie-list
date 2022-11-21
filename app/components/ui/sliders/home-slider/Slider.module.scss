@@ -1,0 +1,70 @@
+.slider {
+	@apply relative mx-auto hidden lg:block;
+	width: 70%;
+
+	.slide {
+		@apply relative h-72 rounded-2xl overflow-hidden;
+
+		.bigPoster {
+			@apply image-bg blur-md;
+		}
+
+		.heading {
+			@apply absolute left-12 top-1/2 -translate-y-1/2 flex z-2 gap-5 xl:gap-10;
+
+			.poster {
+				@apply rounded-lg;
+			}
+			.info {
+				@apply flex flex-col items-start gap-4;
+			}
+			.title {
+				@apply text-xl xl:text-3xl uppercase text-white font-extrabold;
+				text-shadow: 1px 1px black;
+			}
+			.genres {
+				@apply flex flex-col lg:flex-row items-center gap-5;
+
+				a {
+					@apply px-5 py-0.5 bg-white bg-opacity-10 rounded-lg;
+					text-shadow: 1px 1px black;
+				}
+			}
+			button {
+				@apply mt-auto px-10;
+			}
+		}
+		.parameters {
+			@apply flex items-center gap-6;
+
+			> li {
+				@apply relative;
+				text-shadow: 1px 1px black;
+
+				&::after {
+					@apply absolute top-1/2 -translate-y-1/2 w-0.5 bg-gray-100 -right-3.5;
+					height: 71%;
+					content: '';
+				}
+				&:last-child {
+					&::after {
+						@apply hidden;
+					}
+				}
+			}
+		}
+	}
+	.buttons {
+		.left,
+		.right {
+			@apply absolute top-1/2 -translate-y-1/2 z-3;
+		}
+
+		.left {
+			@apply left-2;
+		}
+		.right {
+			@apply right-2;
+		}
+	}
+}

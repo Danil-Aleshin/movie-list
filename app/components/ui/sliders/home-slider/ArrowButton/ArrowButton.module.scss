@@ -1,0 +1,7 @@
+.arrowBtn {
+	@apply bg-gray-300 bg-opacity-20 box-shadow w-8 h-8 rounded-full flex items-center justify-center;
+
+	svg {
+		@apply fill-white text-2xl;
+	}
+}

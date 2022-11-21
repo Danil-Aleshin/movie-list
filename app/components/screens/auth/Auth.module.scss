@@ -1,0 +1,22 @@
+.wrapper {
+	@apply box-shadow mx-auto max-w-lg bg-darkBlue-900 p-layout rounded-lg mt-52;
+
+	.title {
+		@apply sm:text-3xl text-center;
+	}
+	> form {
+		@apply flex flex-col gap-5 mt-5;
+	}
+	.buttons {
+		@apply sm:block flex w-fit gap-2 flex-col items-center mt-5 mx-auto;
+		> button {
+			@apply text-center w-full sm:w-min;
+			&:first-child {
+				@apply sm:rounded-r-none;
+			}
+			&:last-child {
+				@apply sm:rounded-l-none opacity-80 hover:opacity-100 transition-opacity bg-darkPrimary;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"extends": ["next/core-web-vitals"],
+	"rules": {
+		"no-console": "warn",
+		"quotes": ["error", "single"],
+		"prefer-const": "error",
+		"indent": ["warn", "tab"],
+		"semi": ["warn", "never"],
+		"react/display-name": "off",
+		"react-hooks/exhaustive-deps": "off"
+	}
+}

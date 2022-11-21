@@ -1,0 +1,48 @@
+.header {
+	@apply flex flex-col items-start gap-1.5 mb-10;
+}
+.collections {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fill, minmax(200px,400px));
+	row-gap: 20px;
+	column-gap: 40px;
+
+	.collection {
+		@apply relative w-full h-28 			transition-transform sm:h-52;
+
+		img {
+			@apply image-bg rounded-lg;
+		}
+		&:hover {
+			@apply -translate-y-1;
+		}
+		&::before {
+			@apply w-full h-full absolute top-0.1 left-0 z-1 rounded-lg;
+			content: '';
+
+			background: linear-gradient(
+				360deg,
+				#101215 3.31%,
+				rgba(#101215, 0.99) 7.71%,
+				rgba(#101215, 0.96) 12.11%,
+				rgba(#101215, 0.91) 16.51%,
+				rgba(#101215, 0.85) 20.91%,
+				rgba(#101215, 0.76) 25.31%,
+				rgba(#101215, 0.67) 29.71%,
+				rgba(#101215, 0.55) 34.11%,
+				rgba(#101215, 0.44) 38.52%,
+				rgba(#101215, 0.33) 42.92%,
+				rgba(#101215, 0.23) 47.32%,
+				rgba(#101215, 0.15) 51.72%,
+				rgba(#101215, 0.08) 56.12%,
+				rgba(#101215, 0.03) 60.52%,
+				rgba(#101215, 0.01) 64.92%,
+				rgba(#101215, 0) 69.32%
+			);
+		}
+		.title {
+			@apply absolute bottom-3 left-1/2 -translate-x-1/2 text-white z-3;
+		}
+	}
+}

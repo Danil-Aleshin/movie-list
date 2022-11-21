@@ -1,0 +1,26 @@
+.list {
+	@apply absolute border bg-darkBlue-1000 border-gray-700 rounded-lg animate-fade z-10;
+	top: calc(100% + 15px);
+	left: 2px;
+
+	> li > a {
+		@apply flex items-center py-3 px-4 relative;
+
+		&::after {
+			@apply absolute -right-0.5 w-0.5 transition-colors h-2/6;
+			content: '';
+			top: 34%;
+			background-color: transparent;
+		}
+
+		&:hover::after {
+			@apply bg-primary;
+		}
+		> img {
+			@apply rounded-lg;
+		}
+		> span {
+			@apply text-white ml-3;
+		}
+	}
+}

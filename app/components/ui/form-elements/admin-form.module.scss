@@ -1,0 +1,23 @@
+.form {
+	@apply flex flex-col gap-8;
+
+	.fields {
+		@apply flex items-center flex-wrap justify-between gap-8;
+
+		.field {
+			width: 40%;
+		}
+	}
+
+	.selects {
+		@apply flex flex-col gap-8;
+	}
+
+	.files {
+		@apply flex flex-col gap-5;
+	}
+
+	button {
+		@apply mt-8 self-start;
+	}
+}

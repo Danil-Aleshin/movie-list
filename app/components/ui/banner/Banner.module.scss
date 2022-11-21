@@ -1,0 +1,6 @@
+.banner {
+	@apply w-full h-100 relative hidden md:block;
+	img {
+		@apply image-bg rounded-2xl;
+	}
+}

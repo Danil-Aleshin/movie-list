@@ -1,0 +1,32 @@
+.header {
+	@apply flex justify-between;
+}
+
+.table {
+	@apply w-full flex flex-col gap-4;
+	.item {
+		@apply flex items-center justify-between bg-gray-700 bg-opacity-20 px-5 rounded-lg transition-colors hover:bg-opacity-50 truncate;
+
+		> div {
+			@apply text-white opacity-80 py-3;
+			width: 24%;
+		}
+	}
+
+	.actions {
+		@apply flex gap-3.5 justify-end;
+
+		> button svg {
+			@apply fill-primary;
+		}
+	}
+	.itemHeader {
+		@apply bg-primary shadow-lg bg-opacity-90;
+		> div {
+			@apply text-white font-semibold py-2.5;
+		}
+	}
+	.notFound {
+		@apply text-lg text-white text-opacity-40 text-center py-3;
+	}
+}

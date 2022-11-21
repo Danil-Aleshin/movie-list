@@ -1,0 +1,35 @@
+.movieInfo {
+	@apply flex flex-col items-center gap-24 xl:gap-32 xl:flex-row xl:justify-start;
+}
+
+.parameters {
+	@apply flex flex-col gap-3 items-start;
+
+	.parameter {
+		@apply flex flex-col gap-1.5;
+		
+		.title{
+			@apply text-gray-400
+		}
+
+		.text {
+			@apply text-white text-lg;
+		}
+	}
+	.genre {
+		.link {
+			@apply relative;
+
+			&::after {
+				content: '';
+				transition: width 0.3s ease-in-out;
+				@apply absolute bottom-0 left-0 bg-primary h-0.5 w-0;
+			}
+			&:hover {
+				&::after {
+					@apply w-full;
+				}
+			}
+		}
+	}
+}
