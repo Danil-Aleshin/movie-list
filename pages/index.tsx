@@ -13,11 +13,11 @@ const HomePage: NextPage<IHome> = ({ slides, mostPopularMovies, actors }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
 	try {
-		const { data: movies } = await movieServices.getAll()
+		
 		const { data: mostPopularMoviesData } = await movieServices.getMostPopular()
 		const { data: actorsData } = await actorServices.getAll()
 
-		const slides: ISlide[] = movies.slice(0, 4).map((movie) => ({
+		const slides: ISlide[] = mostPopularMoviesData.slice(0, 4).map((movie) => ({
 			_id: movie._id,
 			bigPoster: movie.bigPoster,
 			poster: movie.poster,

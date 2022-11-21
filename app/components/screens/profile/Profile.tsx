@@ -1,5 +1,4 @@
 import Heading from '@/components/ui/heading/Heading'
-import Meta from '@/utils/meta/Meta'
 import { FC } from 'react'
 import { useForm } from 'react-hook-form'
 import { IProfileInput } from './profile.types'
@@ -7,6 +6,7 @@ import useProfile from './useProfile'
 import styles from './Profile.module.scss'
 import AuthFields from '../auth/AuthFields'
 import Button from '@/components/ui/form-elements/Button'
+import Layout from '@/components/layout/Layout'
 
 interface IProfile {}
 
@@ -18,7 +18,7 @@ const Profile: FC<IProfile> = ({}) => {
 	const { onSubmit } = useProfile(setValue)
 
 	return (
-		<Meta title="Profile">
+		<Layout title="Profile">
 			<div className="">
 				<div className="mb-10">
 					<Heading title="Profile" />
@@ -30,7 +30,7 @@ const Profile: FC<IProfile> = ({}) => {
 					</form>
 				</div>
 			</div>
-		</Meta>
+		</Layout>
 	)
 }
 

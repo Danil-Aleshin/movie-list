@@ -1,10 +1,10 @@
-import Meta from '@/utils/meta/Meta'
 import { FC } from 'react'
 import Gallery from '../gallery/Gallery'
 import { IGalleryItem } from '../gallery/gallery.type'
 import Heading from '../heading/Heading'
 import styles from './Catalog.module.scss'
 import parse from 'html-react-parser'
+import Layout from '@/components/layout/Layout'
 
 interface ICatalog {
 	title: string
@@ -14,7 +14,7 @@ interface ICatalog {
 
 const Catalog: FC<ICatalog> = ({ description, title, gallery }) => {
 	return (
-		<Meta title={title} description={description}>
+		<Layout title={title} description={description}>
 			<div className={styles.catalog}>
 				<div className={styles.header}>
 					<Heading title={title} className="" />
@@ -26,7 +26,7 @@ const Catalog: FC<ICatalog> = ({ description, title, gallery }) => {
 					<div className={styles.notFound}>Nothing found</div>
 				)}
 			</div>
-		</Meta>
+		</Layout>
 	)
 }
 

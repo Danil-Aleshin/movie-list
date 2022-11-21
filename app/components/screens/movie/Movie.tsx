@@ -1,7 +1,6 @@
 import Banner from '@/components/ui/banner/Banner'
 import Heading from '@/components/ui/heading/Heading'
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
-import Meta from '@/utils/meta/Meta'
 import Image from 'next/image'
 import { FC } from 'react'
 import { IMoviePage } from '../../../../pages/movie/[slug]'
@@ -12,6 +11,7 @@ import SubHeading from '@/components/ui/heading/SubHeading'
 import useUpdateCountOpened from './useUpdateCountOpened'
 import FavoriteButton from '@/components/ui/favorite-button/FavoriteButton'
 import Parameters from './Parameters/Parameters'
+import Layout from '@/components/layout/Layout'
 
 const DynamicVideoPlayer = dynamic(() => import('@/components/ui/video-player/VideoPlayer'), {
 	ssr: false,
@@ -24,7 +24,7 @@ const Movie: FC<IMoviePage> = ({ similarMovies, movie }) => {
 	useUpdateCountOpened(movie?.slug ? movie.slug : '')
 
 	return (
-		<Meta title={`${movie?.title}`} description={`Watch ${movie?.title}`}>
+		<Layout title={`${movie?.title}`} description={`Watch ${movie?.title}`}>
 			<div className="flex flex-col gap-16">
 				{movie ? (
 					<>
@@ -55,7 +55,7 @@ const Movie: FC<IMoviePage> = ({ similarMovies, movie }) => {
 					<SkeletonLoader />
 				)}
 			</div>
-		</Meta>
+		</Layout>
 	)
 }
 

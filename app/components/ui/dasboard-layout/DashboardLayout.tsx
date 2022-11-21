@@ -1,26 +1,24 @@
+import Header from './Header/Header'
 import Meta from '@/utils/meta/Meta'
 import { FC } from 'react'
-import Header from './Header/Header'
-import styles from './Layout.module.scss'
+import styles from './DashboardLayout.module.scss'
 import Navigation from './Navigation/Navigation'
 
-interface props {
+interface IDashboardLayout {
 	children: JSX.Element
 	title: string
-	description?: string
 }
 
-const Layout: FC<props> = ({ children, title, description }) => {
+const DashboardLayout: FC<IDashboardLayout> = ({ children, title }) => {
 	return (
 		<div className={styles.layout}>
 			<Navigation />
 			<Header />
 			<main className={styles.main}>
-				<Meta title={title} description={description}>
-					{children}
-				</Meta>
+				<Meta title={title}>{children}</Meta>
 			</main>
 		</div>
 	)
 }
-export default Layout
+
+export default DashboardLayout

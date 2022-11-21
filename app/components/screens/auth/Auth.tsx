@@ -2,13 +2,13 @@ import { FC, useState } from 'react'
 import { useAuthRedirect } from './useAuthRedirect'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { IAuthInput } from './auth.types'
-import Meta from '@/utils/meta/Meta'
 import styles from './Auth.module.scss'
 import Heading from '@/components/ui/heading/Heading'
 import Button from '@/components/ui/form-elements/Button'
 import { useAuth } from '@/shared/useAuth'
 import AuthFields from './AuthFields'
 import { useActions } from '@/hooks/useActions'
+import Layout from '@/components/layout/Layout'
 
 const Auth: FC = ({}) => {
 	const [type, setType] = useState<'login' | 'register'>('login')
@@ -32,7 +32,7 @@ const Auth: FC = ({}) => {
 		reset()
 	}
 	return (
-		<Meta title="Auth">
+		<Layout title="Auth">
 			<section className={styles.wrapper}>
 				<Heading className={styles.title} title="Authentication" />
 				<form onSubmit={handleSubmit(onSubmit)}>
@@ -47,7 +47,7 @@ const Auth: FC = ({}) => {
 					</div>
 				</form>
 			</section>
-		</Meta>
+		</Layout>
 	)
 }
 

@@ -13,7 +13,7 @@
 		@apply border-none;
 	}
 
-	> li {
+	.menuItem {
 		> a {
 			@apply flex items-center gap-4 cursor-pointer xl:justify-start justify-center;
 

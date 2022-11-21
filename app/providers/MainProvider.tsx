@@ -22,9 +22,7 @@ const MainProvider: FC<TypeComponentAuthFields> = ({ children, Component }) => {
 			<Provider store={sotre}>
 				<QueryClientProvider client={queryClient}>
 					<ReduxToastr />
-					<AuthProvider Component={Component}>
-						<Layout>{children}</Layout>
-					</AuthProvider>
+					<AuthProvider Component={Component}>{children}</AuthProvider>
 				</QueryClientProvider>
 			</Provider>
 		</HeadProvider>

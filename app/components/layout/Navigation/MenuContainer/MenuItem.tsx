@@ -9,7 +9,10 @@ const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 	const { asPath } = useRouter()
 
 	return (
-		<li className={asPath === item.link ? styles.active : ''}>
+		<li
+			className={
+				asPath === item.link ? `${styles.menuItem} ${styles.active}` : `${styles.menuItem}`
+			}>
 			<Link href={item.link}>
 				<a>
 					<MaterialIcon name={item.icon} />
