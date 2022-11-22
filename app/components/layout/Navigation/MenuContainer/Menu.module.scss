@@ -12,34 +12,33 @@
 	&:last-child {
 		@apply border-none;
 	}
+}
+.menuItem {
+	> a {
+		@apply flex items-center gap-4 cursor-pointer xl:justify-start justify-center;
 
-	.menuItem {
-		> a {
-			@apply flex items-center gap-4 cursor-pointer xl:justify-start justify-center;
-
-			> svg {
-				@apply text-2lg transition-colors flex-shrink-0;
-			}
-			> span {
-				@apply transition-colors hidden xl:block;
-			}
+		> svg {
+			@apply text-2lg transition-colors flex-shrink-0;
 		}
-
-		&:hover {
-			> a > svg {
-				@apply fill-white;
-			}
-			> a > span {
-				@apply text-white;
-			}
+		> span {
+			@apply transition-colors hidden xl:block;
 		}
-		&.active {
-			> a > svg {
-				@apply fill-primary;
-			}
-			> a > span {
-				@apply text-primary;
-			}
+	}
+
+	&:hover {
+		> a > svg {
+			@apply fill-white;
+		}
+		> a > span {
+			@apply text-white;
+		}
+	}
+	&.active {
+		> a > svg {
+			@apply fill-primary;
+		}
+		> a > span {
+			@apply text-primary;
 		}
 	}
 }

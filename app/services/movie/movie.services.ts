@@ -8,7 +8,7 @@ export const movieServices = {
 		return axiosDefault.get<IMovie[]>(getMoviesUrl(''), {
 			params: searchTerm
 				? {
-					searchTerm,
+						searchTerm,
 				  }
 				: {},
 		})
@@ -40,8 +40,8 @@ export const movieServices = {
 		return axiosAuth.delete<string>(getMoviesUrl(`/${_id}`))
 	},
 	async updateCountOpened(slug: string) {
-		return axiosAuth.post<string>(getMoviesUrl('/update-count-opened'),{
-			slug
+		return axiosAuth.post<string>(getMoviesUrl('/update-count-opened'), {
+			slug,
 		})
 	},
 }

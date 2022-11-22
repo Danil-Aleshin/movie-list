@@ -1,8 +1,7 @@
-import AdminNavigation from '@/components/ui/admin-navigation/AdminNavigation'
 import AdminHeader from '@/components/ui/admin-table/AdminHeader/AdminHeader'
 import AdminTable from '@/components/ui/admin-table/Table/AdminTable'
+import DashboardLayout from '@/components/ui/dasboard-layout/DashboardLayout'
 import Heading from '@/components/ui/heading/Heading'
-import Meta from '@/utils/meta/Meta'
 import { FC } from 'react'
 import useActors from './useActors'
 
@@ -12,9 +11,8 @@ const ActorList: FC<IActorList> = ({}) => {
 	const { data, isLoading, searchTerm, handleSearch, deleteAsync, createAsync } = useActors()
 
 	return (
-		<Meta title="Actors">
+		<DashboardLayout title='Actor list'>
 			<div className={'wrapper-admin'}>
-				<AdminNavigation />
 				<Heading title="Actor list" />
 				<AdminHeader onClick={createAsync} handleSearch={handleSearch} searchTherm={searchTerm} />
 				<AdminTable
@@ -24,7 +22,7 @@ const ActorList: FC<IActorList> = ({}) => {
 					removeHandler={deleteAsync}
 				/>
 			</div>
-		</Meta>
+		</DashboardLayout>
 	)
 }
 

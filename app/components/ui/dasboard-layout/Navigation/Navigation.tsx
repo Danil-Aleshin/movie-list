@@ -9,10 +9,14 @@ interface INavigation {}
 
 const Navigation: FC<INavigation> = ({}) => {
 	return (
-		<aside>
-			<Logo />
-			<Menu options={navList} />
-			<LogoutBtn />
+		<aside className="flex flex-col justify-between">
+			<div className="">
+				<Logo />
+				<Menu options={navList} />
+			</div>
+			<div className="mb-3">
+				<LogoutBtn />
+			</div>
 		</aside>
 	)
 }

@@ -1,8 +1,7 @@
-import AdminNavigation from '@/components/ui/admin-navigation/AdminNavigation'
 import AdminHeader from '@/components/ui/admin-table/AdminHeader/AdminHeader'
 import AdminTable from '@/components/ui/admin-table/Table/AdminTable'
+import DashboardLayout from '@/components/ui/dasboard-layout/DashboardLayout'
 import Heading from '@/components/ui/heading/Heading'
-import Meta from '@/utils/meta/Meta'
 import { FC } from 'react'
 import useGenres from './useGenres'
 
@@ -12,15 +11,10 @@ const GenreList: FC<IGenreList> = ({}) => {
 	const { data, isLoading, searchTerm, handleSearch, deleteAsync, createAsync } = useGenres()
 
 	return (
-		<Meta title="Genres">
+		<DashboardLayout title="Genre list">
 			<div className={'wrapper-admin'}>
-				<AdminNavigation />
 				<Heading title="Genre list" />
-				<AdminHeader
-					onClick={createAsync}
-					handleSearch={handleSearch}
-					searchTherm={searchTerm}
-				/>
+				<AdminHeader onClick={createAsync} handleSearch={handleSearch} searchTherm={searchTerm} />
 				<AdminTable
 					tableItems={data || []}
 					isLoading={isLoading}
@@ -28,7 +22,7 @@ const GenreList: FC<IGenreList> = ({}) => {
 					removeHandler={deleteAsync}
 				/>
 			</div>
-		</Meta>
+		</DashboardLayout>
 	)
 }
 

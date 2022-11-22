@@ -1,12 +1,14 @@
 import UserList from '@/components/screens/dashboard/users/UserList'
-import {NextPage} from 'next'
+import { NextPageAuth } from '@/shared/types/auth.types'
+
 
 interface IUserPage{
 	
 }
 
-const UserPage: NextPage<IUserPage> = ({}) => {
+const UserPage: NextPageAuth<IUserPage> = ({}) => {
 	return <UserList/>
 }
+UserPage.isOnlyAdmin = true
 
 export default UserPage

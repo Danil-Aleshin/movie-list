@@ -1,10 +1,8 @@
-import AdminNavigation from '@/components/ui/admin-navigation/AdminNavigation'
 import Field from '@/components/ui/form-elements/Field'
 import Heading from '@/components/ui/heading/Heading'
 import SkeletonLoader from '@/components/ui/SkeletonLoader'
 import SlugField from '@/components/ui/form-elements/slug-field/SlugField'
 import { generateSlug } from '@/utils/generate-slug.ts/generateSlug'
-import Meta from '@/utils/meta/Meta'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { IGenreEditInput } from './genre-edit.types'
@@ -13,6 +11,7 @@ import formStyles from '@/components/ui/form-elements/admin-form.module.scss'
 import Button from '@/components/ui/form-elements/Button'
 import { stripHtml } from 'string-strip-html'
 import dynamic from 'next/dynamic'
+import DashboardLayout from '@/components/ui/dasboard-layout/DashboardLayout'
 
 const DynamicTextEditor = dynamic(
 	() => import('@/components/ui/form-elements/text-editor/TextEditor'),
@@ -36,9 +35,8 @@ const GenreEdit: FC = ({}) => {
 	const { isLoading, onSubmit, genre } = useGenreEdit(setValue)
 
 	return (
-		<Meta title="Edit genre">
+		<DashboardLayout title="Edit genre">
 			<div className={'wrapper-admin'}>
-				<AdminNavigation />
 				<Heading title={`Edit genre ${genre?.data.name}`} />
 				<form className={formStyles.form} onSubmit={handleSubmit(onSubmit)}>
 					{isLoading ? (
@@ -96,7 +94,7 @@ const GenreEdit: FC = ({}) => {
 					)}
 				</form>
 			</div>
-		</Meta>
+		</DashboardLayout>
 	)
 }
 

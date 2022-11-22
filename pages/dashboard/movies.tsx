@@ -1,10 +1,12 @@
 import MovieList from '@/components/screens/dashboard/movies/MovieList'
-import { NextPage } from 'next'
+import { NextPageAuth } from '@/shared/types/auth.types'
 
-interface IUserPage {}
 
-const UserPage: NextPage<IUserPage> = ({}) => {
+interface IMoviesPage {}
+
+const MoviesPage: NextPageAuth<IMoviesPage> = ({}) => {
 	return <MovieList />
 }
+MoviesPage.isOnlyAdmin = true
 
-export default UserPage
+export default MoviesPage
