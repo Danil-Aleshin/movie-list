@@ -1,11 +1,11 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { IMenuItem } from './menu.types'
 import styles from './Menu.module.scss'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import MaterialIcon from '@/components/ui/MaterialIcon'
 
-const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
+const MenuItem: FC<{ item: IMenuItem }> = memo(({ item }) => {
 	const { asPath } = useRouter()
 
 	return (
@@ -21,5 +21,5 @@ const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 			</Link>
 		</li>
 	)
-}
+})
 export default MenuItem

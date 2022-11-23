@@ -1,0 +1,39 @@
+.statistics {
+	@apply flex flex-col gap-10;
+}
+
+.statisticsItem {
+	@apply flex flex-col justify-between rounded-lg bg-darkBlue-900 text-xl hover:-translate-y-0.5;
+	box-shadow: 5px 15px 15px 1px rgba(0, 185, 174, 0.2);
+	transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+	&:hover {
+		box-shadow: 9px 20px 15px 1px rgba(0, 185, 174, 0.2);
+	}
+
+	.counter {
+		@apply flex flex-col self-start;
+
+		.title {
+			@apply text-sm font-medium text-gray-300;
+		}
+		.value {
+			@apply text-primary;
+		}
+	}
+}
+
+.topStats {
+	@apply flex flex-col md:flex-row flex-wrap gap-10;
+
+	.statisticsItem {
+		@apply w-64 h-36 p-3;
+	}
+}
+
+.popularMovie {
+	@apply w-120 p-5 animate-scaleIn flex flex-col h-full items-center gap-3;
+
+	.heading {
+		@apply flex flex-col items-center gap-4;
+	}
+}

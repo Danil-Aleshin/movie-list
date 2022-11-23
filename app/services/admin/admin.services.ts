@@ -1,5 +1,6 @@
 import axiosAuth from '@/api/interceptors'
 import { getStatisticsUrl, getUsersUrl } from '@/configs/api.config'
+import { IMovie } from '@/shared/types/movie.types'
 
 export const adminServices = {
 	async getCountUsers() {
@@ -7,5 +8,8 @@ export const adminServices = {
 	},
 	async getCountMovies() {
 		return axiosAuth.get<number>(getStatisticsUrl('/movies-count'))
+	},
+	async getMostPopularMovie() {
+		return axiosAuth.get<IMovie[]>(getStatisticsUrl('/most-popular-movie'))
 	},
 }

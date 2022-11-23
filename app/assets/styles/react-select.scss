@@ -7,7 +7,7 @@
 		box-shadow: none !important;
 
 		&--menu-is-open {
-			border-color: #cf6643 !important;
+			border-color: #00B9AE !important;
 		}
 	}
 
@@ -37,7 +37,7 @@
 	}
 
 	&__multi-value {
-		background-color: #1b1b1b !important;
+		background-color: #21242D !important;
 		border-radius: 0.5rem !important;
 	}
 
@@ -48,7 +48,7 @@
 
 	&__multi-value__remove {
 		svg {
-			fill: #cf6643;
+			fill: #00B9AE;
 		}
 
 		&:hover {
