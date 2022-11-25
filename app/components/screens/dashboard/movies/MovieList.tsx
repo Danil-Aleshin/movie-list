@@ -1,8 +1,6 @@
 import AdminHeader from '@/components/ui/admin-table/AdminHeader/AdminHeader'
 import AdminTable from '@/components/ui/admin-table/Table/AdminTable'
 import DashboardLayout from '@/components/ui/dasboard-layout/DashboardLayout'
-import Heading from '@/components/ui/heading/Heading'
-import Meta from '@/utils/meta/Meta'
 import { FC } from 'react'
 
 import useMovies from './useMovies'
