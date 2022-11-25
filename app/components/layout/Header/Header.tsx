@@ -1,7 +1,9 @@
 import { FC } from 'react'
 import Search from './Search/Search'
 
-interface IHeader {}
+interface IHeader {
+
+}
 const Header: FC<IHeader> = ({}) => {
 	return (
 		<header className="flex items-center">

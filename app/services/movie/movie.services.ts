@@ -1,4 +1,5 @@
-import { IMovieEditInput } from '@/components/screens/admin/movie/movie-edit.types'
+
+import { IMovieEditInput } from '@/components/screens/dashboard/movies/movie/movie-edit.types'
 import { getMoviesUrl } from '@/configs/api.config'
 import { IMovie } from '@/shared/types/movie.types'
 import axiosAuth, { axiosDefault } from 'api/interceptors'
@@ -8,7 +9,7 @@ export const movieServices = {
 		return axiosDefault.get<IMovie[]>(getMoviesUrl(''), {
 			params: searchTerm
 				? {
-					searchTerm,
+						searchTerm,
 				  }
 				: {},
 		})
@@ -40,8 +41,8 @@ export const movieServices = {
 		return axiosAuth.delete<string>(getMoviesUrl(`/${_id}`))
 	},
 	async updateCountOpened(slug: string) {
-		return axiosAuth.post<string>(getMoviesUrl('/update-count-opened'),{
-			slug
+		return axiosAuth.post<string>(getMoviesUrl('/update-count-opened'), {
+			slug,
 		})
 	},
 }

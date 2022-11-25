@@ -1,5 +1,5 @@
+import Layout from '@/components/layout/Layout'
 import Heading from '@/components/ui/heading/Heading'
-import Meta from '@/utils/meta/Meta'
 import { FC } from 'react'
 import { IGenresPage } from '../../../../pages/genres'
 import CollectionItem from './CollectionItem'
@@ -7,7 +7,7 @@ import styles from './Collections.module.scss'
 
 const Collections: FC<IGenresPage> = ({ collections }) => {
 	return (
-		<Meta title="Discovery" description="In this section you will find all genres on our site">
+		<Layout title="Discovery" description="In this section you will find all genres on our site">
 			<div className="">
 				<div className={styles.header}>
 					<Heading title="Discovery" />
@@ -22,7 +22,7 @@ const Collections: FC<IGenresPage> = ({ collections }) => {
 					)}
 				</div>
 			</div>
-		</Meta>
+		</Layout>
 	)
 }
 

@@ -13,7 +13,7 @@ interface IAdminTable {
 }
 const AdminTable: FC<IAdminTable> = memo(
 	({ headerItems, isLoading, removeHandler, tableItems }) => {
-		return (
+	return (
 			<div className={styles.table}>
 				<AdminTableHeader headerItems={headerItems} />
 				{isLoading ? (

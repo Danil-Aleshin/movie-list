@@ -6,8 +6,8 @@ const primary = '#00B9AE'
 const darkPrimary = '#00a197'
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./app/components/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './app/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     colors: {
@@ -46,7 +46,7 @@ module.exports = {
         layout: '30px',
         65: '260px',
         70.5: '282px',
-        100: "400px",
+        100: '400px',
         120: '480px'
       },
       fontSize: {
@@ -79,7 +79,7 @@ module.exports = {
         DEFAULT: 'ease-in-out'
       },
       transitionDuration: {
-        DEFAULT: "200ms"
+        DEFAULT: '200ms'
       },
       zIndex: {
         1: '1',

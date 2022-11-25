@@ -1,5 +1,5 @@
 import axiosAuth, { axiosDefault } from '@/api/interceptors'
-import { IActorEditInput } from '@/components/screens/admin/actor/actor-edit.types'
+import { IActorEditInput } from '@/components/screens/dashboard/actors/actor/actor-edit.types'
 import { getActorsUrl } from '@/configs/api.config'
 import { IActor } from '@/shared/types/movie.types'
 
