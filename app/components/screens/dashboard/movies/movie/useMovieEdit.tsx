@@ -18,7 +18,7 @@ const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 		() => movieServices.getById(movieId),
 		{
 			onSuccess: ({ data }) => {
-				getKeys(data).map((key:any) => {
+				getKeys(data).map((key) => {
 					setValue(key, data[key])
 				})
 			},
