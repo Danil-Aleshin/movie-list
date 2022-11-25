@@ -1,4 +1,5 @@
-import { IMovieEditInput } from '@/components/screens/admin/movie/movie-edit.types'
+
+import { IMovieEditInput } from '@/components/screens/dashboard/movies/movie/movie-edit.types'
 import { getMoviesUrl } from '@/configs/api.config'
 import { IMovie } from '@/shared/types/movie.types'
 import axiosAuth, { axiosDefault } from 'api/interceptors'
