@@ -18,7 +18,7 @@ const useGenreEdit = (setValue: UseFormSetValue<IGenreEditInput>) => {
 		() => genreServices.getById(genreId),
 		{
 			onSuccess: ({ data }) => {
-				getKeys(data).map((key) => {
+				getKeys(data).map((key:any) => {
 					setValue(key, data[key])
 				})
 			},

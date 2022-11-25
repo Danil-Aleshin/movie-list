@@ -18,7 +18,7 @@ const useActorEdit = (setValue: UseFormSetValue<IActorEditInput>) => {
 		() => actorServices.getById(actorId),
 		{
 			onSuccess: ({ data }) => {
-				getKeys(data).map((key) => {
+				getKeys(data).map((key:any) => {
 					setValue(key, data[key])
 				})
 			},
