@@ -36,6 +36,7 @@ const PopularMovie: FC<IPopularMovie> = ({}) => {
 					height={200}
 					draggable={false}
 					className="image-bg rounded-lg"
+					priority
 				/>
 				<div className={styles.counter}>
 					<p className={styles.value}>{viewsValue}</p>

@@ -12,4 +12,7 @@ export const adminServices = {
 	async getMostPopularMovie() {
 		return axiosAuth.get<IMovie[]>(getStatisticsUrl('/most-popular-movie'))
 	},
+	async getTotalViews() {
+		return axiosAuth.get<number>(getStatisticsUrl('/views'))
+	},
 }

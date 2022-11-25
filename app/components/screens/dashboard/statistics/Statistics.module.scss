@@ -23,17 +23,21 @@
 }
 
 .topStats {
-	@apply flex flex-col md:flex-row flex-wrap gap-10;
+	@apply flex items-center flex-col md:flex-row md:items-start flex-wrap gap-10;
 
 	.statisticsItem {
-		@apply w-64 h-36 p-3;
+		@apply w-56 sm:w-64 h-36 p-3;
 	}
 }
 
 .popularMovie {
-	@apply w-120 p-5 animate-scaleIn flex flex-col h-full items-center gap-3;
+	@apply max-w-xl p-5 animate-scaleIn flex flex-col h-full items-center gap-3;
 
 	.heading {
 		@apply flex flex-col items-center gap-4;
+
+		span{
+			@apply text-lg;
+		}
 	}
 }

@@ -3,9 +3,12 @@ import { useEffect, useState } from 'react'
 
 const AnimatedCounter = (to: number) => {
 	const from: number = Number((to * 0.4).toFixed(0))
+
 	const [currVal, setCurrVal] = useState(from)
-	const step = currVal + to * 0.001
-	const interval = 1
+
+	const step: number = currVal + to * 0.0018
+
+	const interval: number = 1
 
 	useEffect(() => {
 		if (currVal === to) {

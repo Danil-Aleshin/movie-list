@@ -6,16 +6,15 @@ import DashboardLayout from '../../../ui/dasboard-layout/DashboardLayout'
 import styles from './Statistics.module.scss'
 import PopularMovie from './StatisticsItem/PopularMovie'
 import StatisticsItem from './StatisticsItem/StatisticsItem'
-import useStatistics from './useStatistics'
 
 interface IStatistics {}
 
 const Statistics: FC<IStatistics> = ({}) => {
 	
-	const ref = useRef(null)
-	const isInView = useInView(ref, { once: true })
+	const topStatsRef = useRef<HTMLDivElement | null>(null)
+	const isInView = useInView(topStatsRef, { once: true })
 
-	const animation = {
+	const animationTopStats = {
 		transform: isInView ? 'none' : 'translateY(-150px)',
 		opacity: isInView ? 1 : 0,
 		transition: 'all 0.7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s',
@@ -24,7 +23,7 @@ const Statistics: FC<IStatistics> = ({}) => {
 	return (
 		<DashboardLayout title="statistics">
 			<div className={`${styles.statistics}`}>
-				<div ref={ref} style={animation} className={styles.topStats}>
+				<div ref={topStatsRef} style={animationTopStats} className={styles.topStats}>
 					<StatisticsItem
 						url={getAdminUrl('users')}
 						service={adminServices.getCountUsers()}
@@ -35,8 +34,11 @@ const Statistics: FC<IStatistics> = ({}) => {
 						service={adminServices.getCountMovies()}
 						title={'Count Movies'}
 					/>
+					<StatisticsItem url={''} service={adminServices.getTotalViews()} title={'Total Views'} />
 				</div>
-				<PopularMovie />
+				<div className="flex justify-center md:justify-start">
+					<PopularMovie />
+				</div>
 			</div>
 		</DashboardLayout>
 	)
